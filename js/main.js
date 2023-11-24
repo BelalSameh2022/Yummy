@@ -73,11 +73,9 @@ async function getCategories() {
 
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
     response = await response.json();
-    console.log(response);
 
     displayCategories(response.categories);
     $(".inner-loading-screen").fadeOut(400);
-
 }
 
 function displayCategories(arr) {
@@ -95,7 +93,7 @@ function displayCategories(arr) {
         </div>
         `
     }
-    data.innerHTML = temp
+    data.innerHTML = temp;
 }
 
 // =====================> Area <=====================
@@ -165,7 +163,6 @@ async function getCategoryMeals(category) {
 
     displayMeals(response.meals.slice(0, 20));
     $(".inner-loading-screen").fadeOut(400);
-
 }
 
 async function getAreaMeals(area) {
@@ -177,7 +174,6 @@ async function getAreaMeals(area) {
 
     displayMeals(response.meals.slice(0, 20));
     $(".inner-loading-screen").fadeOut(400);
-
 }
 
 async function getIngredientMeals(ingredient) {
@@ -189,23 +185,21 @@ async function getIngredientMeals(ingredient) {
 
     displayMeals(response.meals.slice(0, 20));
     $(".inner-loading-screen").fadeOut(400);
-
 }
 
 
 // =====================> Meal Details <=====================
 async function getMealDetails(mealID) {
-    closeSideNav()
-    data.innerHTML = ""
-    $(".inner-loading-screen").fadeIn(400)
-
+    closeSideNav();
+    data.innerHTML = "";
     searchContainer.innerHTML = "";
+    $(".inner-loading-screen").fadeIn(400);
+
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`);
     response = await response.json();
 
     displayMealDetails(response.meals[0]);
     $(".inner-loading-screen").fadeOut(400);
-
 }
 
 function displayMealDetails(meal) {
