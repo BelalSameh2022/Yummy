@@ -51,7 +51,7 @@ function displayMeals(arr) {
     let temp = "";
     for (let i = 0; i < arr.length; i++) {
         temp += `
-            <div class="col-md-3">
+            <div class="col-xl-3 col-md-4 col-sm-6">
                 <div onclick="getMealDetails('${arr[i].idMeal}')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
                     <img class="w-100" src="${arr[i].strMealThumb}" alt="Yummy">
                     <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
